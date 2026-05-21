@@ -1,0 +1,904 @@
+
+* {
+    margin: 0;
+    pad: 0;
+    box-sizing: border-box;;
+}
+   @keyframes hide {
+
+    0% {
+        opacity: 1;
+        height: 100%;
+        line-height: 100%;
+        padding: 20px;
+        margin-bottom: 10px;
+    }
+
+    75% {
+        opacity: 0;
+        height: 100%;
+        line-height: 100%;
+        padding: 20px;
+        margin-bottom: 10px;
+    }
+
+    100% {
+        opacity: 0;
+        height: 0px;
+        line-height: 0px;
+        padding: 0px;
+        margin-bottom: 0px;
+    }
+}
+
+
+
+.post {
+    background-color: lightgray;
+    padding: 20px;
+    margin: 10px;
+    font-size: 20px;
+    animation-name: hide;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+}
+.tiktok-btn {
+    position: relative;
+    margin-bottom: 20px;
+  
+    width: 54px;
+    height: 54px;
+   padding: 15px;
+    
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+
+    text-decoration: none;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(124, 58, 237, 0.22),
+            rgba(15, 23, 42, 0.92)
+        );
+
+    border: 1px solid rgba(124, 58, 237, 0.25);
+
+    backdrop-filter: blur(10px);
+
+    overflow: hidden;
+
+    transition: all 0.28s ease;
+
+    box-shadow:
+        0 0 18px rgba(124, 58, 237, 0.12);
+}
+
+/* neon ambient glow */
+.tiktok-btn::before {
+    content: "";
+    
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(124, 58, 237, 0.10),
+            transparent 45%,
+            rgba(34, 211, 238, 0.08)
+        );
+
+    opacity: 0;
+
+    transition: 0.3s ease;
+}
+
+/* icon */
+.tiktok-btn svg {
+    width: 34px;
+    height: 34px;
+
+    color: #d8b4fe;
+
+    z-index: 2;
+
+    transition: 0.25s ease;
+}
+
+/* hover */
+.tiktok-btn:hover {
+    transform: translateY(-3px) scale(1.03);
+
+    border-color: rgba(34, 211, 238, 0.45);
+
+    box-shadow:
+        0 0 30px rgba(124, 58, 237, 0.25),
+        0 0 45px rgba(34, 211, 238, 0.12);
+}
+
+.tiktok-btn:hover::before {
+    opacity: 1;
+}
+
+.tiktok-btn:hover svg {
+    color: white;
+
+    transform: scale(1.08);
+}
+
+
+/* ========================= */
+/* SLIDER */
+/* ========================= */
+
+body {
+    margin: 0;
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px;
+
+    background:
+        radial-gradient(circle at top, rgba(0,255,255,0.08), transparent 40%),
+        #080119;
+
+    background-image: url('/static/core/images/ja.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    
+}
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background:
+        radial-gradient(circle at 20% 15%, rgba(140, 90, 255, 0.18), transparent 45%),
+        radial-gradient(circle at 80% 70%, rgba(90, 40, 160, 0.16), transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(30, 10, 60, 0.25), transparent 60%),
+        linear-gradient(
+            to bottom,
+            rgba(10, 5, 20, 0.35),
+            rgba(5, 2, 15, 0.75)
+        );
+
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* ========================= */
+/* MAIN PORTFOLIO CARD */
+/* ========================= */
+
+.slider-wrapper {
+    z-index: 1;
+    width: 100%;
+    max-width: 1150px;
+
+    height: 90vh;
+
+    padding: 50px 40px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 18px;
+
+    position: relative;
+
+    border-radius: 36px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(18, 18, 40, 0.22),
+            rgba(8, 8, 20, 0.12)
+        );
+
+    backdrop-filter: blur(7px);
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+
+    box-shadow:
+        0 0 0 1px rgba(255,255,255,0.03),
+        0 40px 100px rgba(0,0,0,0.65),
+        0 0 60px rgba(0,255,255,0.05);
+
+    isolation: isolate;
+}
+
+/* glow */
+.slider-wrapper::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(0,255,255,0.08),
+            transparent 35%
+        );
+
+    pointer-events: none;
+}
+
+/* inner border */
+.slider-wrapper::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 12px;
+
+    border-radius: 28px;
+
+    border: 1px solid rgba(255,255,255,0.05);
+
+    pointer-events: none;
+}
+
+.slider {
+    position: relative;
+
+    width: 100%;
+    height: 520px;
+
+    overflow: visible;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider img {
+    position: absolute;
+
+    top: 60%;
+    left: 50%;
+    z-index: 9999;
+       width: 220px;
+    height: 220px;
+
+    object-fit: cover;
+
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(20,20,35,0.25),
+            rgba(8,8,18,0.15)
+        );
+
+    border-radius: 12px;
+
+    border:
+        5px solid rgba(255, 255, 255, 0.98);
+
+    cursor: pointer;
+
+    transform:
+        translate(-50%, -50%) scale(0.9);
+
+    transition:
+        transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1),
+        opacity 0.55s ease,
+        filter 0.55s ease,
+        box-shadow 0.55s ease;
+
+    opacity: 0.6;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.55),
+        inset 0 0 0 1px rgba(255,255,255,0.03);
+
+    backdrop-filter: blur(12px);
+    
+    filter:
+    brightness(0.55)
+        saturate(1.05)
+        contrast(1.05);
+
+}
+
+
+
+/* ========================= */
+/* ACTIVE */
+/* ========================= */
+
+.slider img.active {
+
+    transform:
+        translate(-50%, -60%)
+        scale(1.15);
+
+    z-index: 5;
+
+    opacity: 1;
+
+    filter: blur(0px);
+    box-shadow:
+        0 0 25px rgba(0, 255, 255, 0.25),
+        0 20px 60px rgba(0, 0, 0, 0.5),
+        inset 0 0 0 1px rgba(0, 255, 255, 0.3);
+
+    border: 5px solid rgba(255, 255, 255, 0.9);
+     filter: brightness(0.75);
+}
+
+.slider img.active:hover {
+       transform: translate(-50%, -62%)
+        scale(1.28);
+
+    box-shadow:
+        0 0 35px rgba(0, 255, 255, 0.35),
+        0 25px 70px rgba(0, 0, 0, 0.6);
+border: 5px solid rgba(255, 255, 255, 0.9);
+
+    filter: brightness(0.95) saturate(1.3) contrast(1.1);
+
+    
+}
+
+/* ========================= */
+/* PREVIOUS */
+/* ========================= */
+
+.slider img.prev {
+
+    transform:
+        translate(-100%, -65%)
+        rotate(-4deg);
+
+    z-index: 4;
+
+    opacity: 0.95;
+
+   
+}
+
+.slider img.prev:hover,
+.slider img.next:hover {
+    transform:
+        translate(-140%, -45%)
+        scale(0.92)
+        rotate(-2deg);
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.slider img.next:hover {
+    transform:
+        translate(45%, -45%)
+        scale(0.92)
+        rotate(2deg);
+}
+/* ========================= */
+/* NEXT */
+/* ========================= */
+
+.slider img.next {
+
+    transform:
+        translate(0%, -65%)
+      
+        rotate(4deg);
+
+    z-index: 4;
+
+    opacity: 0.95;
+
+    
+}
+
+/* ========================= */
+/* FAR PREVIOUS */
+/* ========================= */
+
+.slider img.far-prev {
+
+    transform:
+        translate(-150%, -55%)
+        scale(0.68)
+        rotate(-12deg);
+
+    z-index: 2;
+
+    opacity: 0.55;
+
+    filter: blur(1px);
+}
+
+/* ========================= */
+/* FAR NEXT */
+/* ========================= */
+
+.slider img.far-next {
+
+    transform:
+        translate(50%, -55%)
+        scale(0.68)
+        rotate(12deg);
+
+    z-index: 2;
+
+    opacity: 0.55;
+
+    filter: blur(1px);
+}
+
+/* ========================= */
+/* HIDDEN */
+/* ========================= */
+
+.slider img.hidden {
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transform:
+        translate(-50%, 20%)
+        scale(0.5);
+
+    z-index: 0;
+
+
+}
+
+h1 {
+    font-family:'Advent Pro';
+    font-weight: 100;
+
+     
+   
+   
+    font-size: 2.6rem;
+
+    letter-spacing: 6px;
+
+    color: rgba(255,255,255,0.94);
+
+    text-shadow:
+        0 0 25px rgba(255,255,255,0.08),
+        0 15px 40px rgba(0,0,0,0.7);
+}
+
+
+h1::before {
+    content: "";
+
+    display: block;
+
+    width: 120px;
+    height: 2px;
+
+    margin: 0 auto 12px auto;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 255, 255, 0.8),
+        rgba(128, 0, 255, 0.6),
+        transparent
+    );
+
+    border-radius: 2px;
+
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+}
+
+button {
+    margin: 0;
+    padding: 12px 22px;
+
+    font-family:'Courier New', Courier, monospace;
+
+    border-radius: 32px;
+
+    border: 1px solid rgba(0, 255, 255, 0.25);
+
+    background: rgba(10, 10, 25, 0.6);
+
+    color: rgba(0, 255, 255, 0.85);
+
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.4),
+        inset 0 0 0 1px rgba(0,255,255,0.1);
+
+    transition: all 0.4s ease;
+}
+
+button:hover {
+    transform: translateY(-2px) scale(1.03);
+
+    border-color: rgba(0, 255, 255, 0.6);
+
+    box-shadow:
+        0 0 25px rgba(0,255,255,0.25),
+        0 15px 40px rgba(0,0,0,0.6);
+
+    color: white;
+}
+
+
+    .subtitle {
+    margin: 0;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 0.95rem;
+    letter-spacing: 1.5px;
+
+    color: rgba(255, 255, 255, 0.55);
+
+    text-align: center;
+
+    max-width: 420px;
+
+    line-height: 1.5;
+
+    opacity: 0.85;
+
+    transition: all 0.4s ease;
+
+    text-shadow:
+        0 0 10px rgba(0, 255, 255, 0.08);
+}
+.subtitle:hover {
+    opacity: 1;
+
+    color: rgba(255, 255, 255, 0.8);
+
+    transform: translateY(-2px);
+
+    text-shadow:
+        0 0 15px rgba(0, 255, 255, 0.2);
+}
+.subtitle::after {
+    content: "";
+
+    display: block;
+
+    width: 60px;
+    height: 1px;
+
+    margin: 10px auto 0 auto;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 255, 255, 0.6),
+        transparent
+    );
+
+    opacity: 0.6;
+}
+
+.btns {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+    align-items: start;
+}
+#musicbtn {
+    width: 54px;
+    height: 54px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+
+    text-decoration: none;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(124, 58, 237, 0.22),
+            rgba(15, 23, 42, 0.92)
+        );
+
+    border: 1px solid rgba(124, 58, 237, 0.25);
+
+    backdrop-filter: blur(10px);
+
+    cursor: pointer;
+
+    transition: all 0.28s ease;
+
+    box-shadow:
+        0 0 18px rgba(124, 58, 237, 0.12);
+
+    position: relative;
+    overflow: hidden;
+
+    font-size: 20px;
+}
+
+/* glow layer */
+#musicbtn::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(124, 58, 237, 0.10),
+            transparent 45%,
+            rgba(34, 211, 238, 0.08)
+        );
+
+    opacity: 0;
+
+    transition: 0.3s ease;
+}
+
+/* hover */
+#musicbtn:hover {
+    transform: translateY(-3px) scale(1.03);
+
+    border-color: rgba(34, 211, 238, 0.45);
+
+    box-shadow:
+        0 0 30px rgba(124, 58, 237, 0.25),
+        0 0 45px rgba(34, 211, 238, 0.12);
+}
+
+#musicbtn:hover::before {
+    opacity: 1;
+}
+
+/* icon state */
+#musicbtn {
+    color: #d8b4fe;
+    text-shadow: 0 0 10px rgba(124, 58, 237, 0.4);
+}
+
+/* playing state */
+#musicbtn.playing {
+    border-color: rgba(34, 211, 238, 0.6);
+
+    box-shadow:
+        0 0 25px rgba(34, 211, 238, 0.25),
+        0 0 60px rgba(124, 58, 237, 0.15);
+}
+#musicbtn {
+    transition: opacity 0.55s ease, transform 0.55s ease;
+      user-select: none;
+    -webkit-user-select: none;
+
+    -webkit-tap-highlight-color: transparent;
+}
+.slider-wrapper.playing {
+    border-color: rgba(34, 211, 238, 0.6);
+
+    box-shadow:
+        0 0 25px rgba(34, 211, 238, 0.25),
+        0 0 60px rgba(124, 58, 237, 0.15);
+    animation: pulse 1.8s infinite ease-in-out;
+}
+
+.slider-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(0, 255, 255, 0.15),
+            transparent 60%
+        );
+}
+.slider-wrapper.playing .slider img.active {
+    animation: beat 1.2s infinite ease-in-out;
+}
+@keyframes beat {
+    0%   { transform: translate(-50%, -70%) scale(1.15); }
+    50%  { transform: translate(-50%, -70%) scale(1.18); }
+    100% { transform: translate(-50%, -70%) scale(1.15); }
+}
+.slider-wrapper.playing::before {
+    opacity: 1;
+    animation: energyMove 3s infinite ease-in-out;
+}
+@keyframes energyMove {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-6px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow:
+            0 0 25px rgba(0, 255, 255, 0.15),
+            0 0 80px rgba(0, 255, 255, 0.05);
+    }
+
+    50% {
+        transform: scale(1.01);
+        box-shadow:
+            0 0 45px rgba(0, 255, 255, 0.35),
+            0 0 120px rgba(0, 255, 255, 0.12);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow:
+            0 0 25px rgba(0, 255, 255, 0.15),
+            0 0 80px rgba(0, 255, 255, 0.05);
+    }
+
+    
+
+    
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 1024px) {
+
+    .slider-wrapper {
+        height: auto;
+        padding: 40px 25px;
+        gap: 14px;
+    }
+
+    .slider {
+        height: 420px;
+    }
+
+    .slider img {
+        width: 250px;
+        height: 300px;
+    }
+
+    h1 {
+        font-size: 3.1rem;
+        letter-spacing: 4px;
+        text-align: center;
+    }
+
+    button {
+        padding: 10px 18px;
+        font-size: 1.85rem;
+    }
+    #musicbtn, 
+    .tiktok-btn {
+        width: 80px;
+        height: 80px;
+    }
+    
+
+    .subtitle {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .slider-wrapper {
+        height: auto;
+        padding: 30px 18px;
+        border-radius: 24px;
+    }
+
+    .slider {
+        height: 360px;
+    }
+
+    .slider img {
+        width: 170px;
+        height: 170px;
+    }
+
+    /* smanji “ludilo” razmaka da slider ne pobegne */
+    .slider img.prev {
+        transform: translate(-90%, -60%) rotate(-4deg) scale(0.8);
+    }
+
+    .slider img.next {
+        transform: translate(0%, -60%) rotate(4deg) scale(0.8);
+    }
+
+    .slider img.far-prev {
+        transform: translate(-140%, -55%) scale(0.6) rotate(-10deg);
+    }
+
+    .slider img.far-next {
+        transform: translate(40%, -55%) scale(0.6) rotate(10deg);
+    }
+
+    .subtitle {
+        font-size: 0.85rem;
+        max-width: 320px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .slider-wrapper {
+        height: auto;
+        padding: 25px 14px;
+        border-radius: 18px;
+    }
+
+    .slider {
+        height: 300px;
+    }
+
+    .slider img {
+        width: 180px;
+        height: 240px;
+        border-radius: 16px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+        letter-spacing: 2px;
+    }
+
+    button {
+        width: 100%;
+        max-width: 260px;
+    }
+
+    .btns {
+        flex-direction: row;
+        gap: 12px;
+    }
+
+    #musicbtn,
+    .tiktok-btn {
+        width: 48px;
+        height: 48px;
+    }
+}

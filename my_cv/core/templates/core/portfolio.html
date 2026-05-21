@@ -1,0 +1,256 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portfolio</title>
+
+    <link rel="stylesheet" href="{% static 'core/portfolio.css' %}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- TOP SECTION -->
+    <div class="grid1">
+
+        <!-- LEFT COLUMN -->
+        <div class="pd-grid">
+
+            <!-- CV -->
+            <div class="cv-text">
+ <h1>Filip Drobnjak</h1>
+
+    <p>
+        Dedicated professional with a background in philosophy and cultural studies,
+        currently pursuing a PhD in Culturology at the University of Belgrade.
+    </p>
+
+    <p>
+        Experience in digital marketing, cultural project management, and full-stack web development.
+        I design and build web platforms, visual content, and interactive digital systems.
+    </p>
+
+    <p>
+        Skilled in Python, Django, JavaScript, and modern web technologies, with additional experience
+        in graphic design, content creation, and social media management.
+    </p>
+
+    <p>
+        Passionate about culture, literature, film, sports history, and digital creativity,
+        combining technical and artistic work into cohesive digital experiences.
+    </p>
+            </div>
+
+            <!-- PROJECTS -->
+            <div class="projects">
+
+                <div class="project">
+
+                    <div class="project-info">
+                        <a href="https://tvoj-sajt1.com" target="_blank">
+                            Project one
+                        </a>
+                    </div>
+
+                    <div class="project-mockup">
+                        <img src="/static/core/images/laptop.png" alt="Laptop Mockup">
+                    </div>
+
+                </div>
+
+                <div class="project">
+
+                    <div class="project-info">
+                        <a href="https://tvoj-sajt1.com" target="_blank">
+                            Project two
+                        </a>
+                    </div>
+
+                    <div class="project-mockup">
+                        <img src="/static/core/images/desktop.png" alt="Desktop Mockup">
+                    </div>
+
+                </div>
+
+                <div class="project">
+
+                    <div class="project-info">
+                        <a href="https://tvoj-sajt1.com" target="_blank">
+                            Project three
+                        </a>
+                    </div>
+
+                    <div class="project-mockup">
+                        <img src="/static/core/images/desktop.png" alt="Desktop Mockup">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        
+        <!-- LABEL -->
+         <div class="podgrid-2">
+        <div class="label">
+            PORTFOLIO.
+        </div>
+        <div class="btns">
+     <a href="https://tiktok.com/@sapijens7" target="_blank" class="tiktok-btn">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M19.189 6.686a4.793 4.793 0 0 1-3.77-4.704h-3.227v13.548a2.896 2.896 0 1 1-2.896-2.896c.298 0 .584.045.854.127V9.486a6.122 6.122 0 0 0-.854-.061A6.123 6.123 0 1 0 15.82 15.55V8.692a8.018 8.018 0 0 0 4.77 1.57V6.686z" />
+                </svg>
+            </a>
+            <a id="musicbtn">🎧</a>
+            <audio id="audio" src="/static/core/audio/shots.mp3"></audio>
+            </div>
+            <div class="cert-box">
+                
+
+    <div class="cert-title">
+        Certifications
+    </div>
+
+    <a href="https://coursera.org/share/0dd87fa1ee19a187b7d049801635a157" target="_blank" class="cert-link">
+       Fundamentals of Graphic Design 
+    </a>
+
+    <a href="https://coursera.org/share/4a1d59719445ff5bb8f2dbb43135d147" target="_blank" class="cert-link">
+        Python for Data Science, AI & Development
+    </a>
+
+    <a href="https://coursera.org/share/bf7a5d787b2daa249800e622f6b1719e" target="_blank" class="cert-link">
+        Django Web Development
+    </a>
+     <a href="https://coursera.org/share/7f9d716b9faa146c63862c5323394c3c" target="_blank" class="cert-link">
+       
+Docker, Kubernetes & OpenShift
+    </a>
+    <a href="https://coursera.org/share/915326bc7b92b3f0f0e53993cf3d2e5a" target="_blank" class="cert-link">
+       
+ Microservices and Serverless
+    </a>
+    <a href="https://coursera.org/share/107f7df461f41e58d151e09fa31d22e8" target="_blank" class="cert-link">
+       
+ Linux Commands and Shell Scripting
+    </a>
+
+ 
+
+
+
+
+</div>
+        
+            </div>
+    </div>
+
+    <!-- SKILLS -->
+    <div class="grid2">
+
+        <div class="skills">
+    <div class="icons" data-skill>
+    <span>Python</span>
+    <img src="/static/core/icons/python.svg">
+</div>
+
+<div class="icons" data-skill>
+    <span>Django</span>
+    <img src="/static/core/icons/django.svg">
+</div>
+
+<div class="icons" data-skill>
+    <span>HTML</span>
+    <img src="/static/core/icons/html.svg">
+</div>
+
+<div class="icons" data-skill>
+    <span>CSS</span>
+    <img src="/static/core/icons/css.svg">
+</div>
+
+<div class="icons" data-skill>
+    <span>JavaScript</span>
+    <img src="/static/core/icons/js-smallest.svg">
+</div>
+
+<div class="icons" data-skill>
+    <span>Photoshop</span>
+    <img src="/static/core/icons/ps-small.svg">
+</div>
+        
+
+    </div>
+
+</div>
+
+<script>
+const skills = document.querySelectorAll("[data-skill]");
+
+skills.forEach(skill => {
+    const icon = skill.querySelector("img");
+    const span = skill.querySelector("span")
+
+    skill.addEventListener("mouseover", () => {
+        span.style.opacity = '0';
+        icon.style.opacity = "1";
+        icon.style.transform = "translateY(-60px)";
+        
+    });
+
+    skill.addEventListener("mouseleave", () => {
+        span.style.opacity = '1';
+        icon.style.opacity = "0";
+        icon.style.transform = "translateY(10px)";
+    });
+});
+
+
+const musicbtn = document.getElementById('musicbtn');
+const audio = document.getElementById('audio');
+const wrapper = document.querySelector('.container')
+
+function setUI() {
+    const isPlaying = !audio.paused;
+
+    musicbtn.textContent = isPlaying ? "⏸" : "🎧";
+    musicbtn.classList.toggle("playing", isPlaying);
+    wrapper.classList.toggle("playing", isPlaying);
+    
+
+    
+}
+
+function toggleMusic() {
+    if (audio.paused) {
+        audio.play();
+    } else {
+        audio.pause();
+    }
+    setUI();
+}
+
+musicbtn.addEventListener('click', toggleMusic);
+
+audio.addEventListener('ended', () => {
+    audio.currentTime = 0;
+    setUI();
+});
+
+document.addEventListener("keydown", (e) => {
+    if (e.code === "Space") {
+        e.preventDefault();
+        toggleMusic();
+    }
+});
+</script>
+
+</body>
+</html>

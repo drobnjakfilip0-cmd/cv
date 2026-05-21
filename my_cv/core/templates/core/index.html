@@ -1,0 +1,211 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portfolio</title>
+        <link rel="stylesheet" href="{% static 'core/style.css' %}">
+        
+    </head>
+    <body>
+        
+
+  <div class="slider-wrapper">
+    <div class="btns">
+     <a href="https://tiktok.com/@sapijens7" target="_blank" class="tiktok-btn">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M19.189 6.686a4.793 4.793 0 0 1-3.77-4.704h-3.227v13.548a2.896 2.896 0 1 1-2.896-2.896c.298 0 .584.045.854.127V9.486a6.122 6.122 0 0 0-.854-.061A6.123 6.123 0 1 0 15.82 15.55V8.692a8.018 8.018 0 0 0 4.77 1.57V6.686z" />
+                </svg>
+            </a>
+            <a id="musicbtn">🎧</a>
+            <audio id="audio" src="/static/core/audio/shots.mp3"></audio>
+            </div>
+<div class="slider">
+    <div>
+        <img src="/static/core/images/800px.png"
+            >
+    </div>
+
+    <div>
+        <img src="/static/core/images/hero.png"
+            >
+    </div>
+
+    <div>
+        <img src="/static/core/images/naruto.png"
+            >
+    </div>
+    <div>
+        <img src="/static/core/images/stranax-poster.png"
+            >
+    </div>
+    <div>
+        <img src="/static/core/images/konacni.png"
+            >
+    </div>
+</div>
+
+    <h1>FILIP DROBNJAK</h1>
+    <a href="{% url 'core:portfolio' %}"><button>view my portfolio</button></a> 
+    <p class="subtitle">Frontend and backend developer • Python/Django • UI/UX experiments • Digital designer </p>
+
+</div>
+         <script>
+            const quantity = 20;
+            let counter = 1;
+            document.addEventListener('click', event => {
+                const element = event.target;
+                if(element.className === 'hide') {
+                    element.parentElement.style.animationPlayState = 'running';
+                    document.addEventListener('animationend', () => {
+                        element.parentElement.remove()
+                    })
+                } 
+            })
+
+            document.addEventListener('DOMContentLoaded', load);
+
+    
+
+            window.addEventListener('scroll', () => {
+                if(window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+                    load()
+                }
+            })
+
+            function load() {
+                const start = counter;
+                const end = start + quantity - 1;
+                counter = end + 1;
+
+                fetch(`/posts/posts?start=${start}&end=${end}`)
+                .then(response => response.json())
+                .then(data => {
+                    data.posts.forEach(add_posts)
+                })
+            }
+
+            function add_posts(contents) {
+
+                const post = document.createElement('div');
+                post.className = 'post';
+                post.innerHTML = `${contents} <button class='hide'>Hide<button>`;
+
+                document.querySelector('#posts').append(post);
+            }
+
+  const slides = document.querySelectorAll(".slider img");
+let index = 0;
+
+function update() {
+
+  const prevIndex = (index - 1 + slides.length) % slides.length;
+  const nextIndex = (index + 1) % slides.length;
+  const farPrevIndex = (index - 2 + slides.length) % slides.length;
+  const farNextIndex = (index + 2) % slides.length;
+
+  slides.forEach((img, i) => {
+
+    img.classList.remove(
+      "active",
+      "prev",
+      "next",
+      "far-prev",
+      "far-next",
+      "hidden"
+    );
+
+    if (i === index) {
+      img.classList.add("active");
+    }
+
+    else if (i === prevIndex) {
+      img.classList.add("prev");
+    }
+
+    else if (i === nextIndex) {
+      img.classList.add("next");
+    }
+
+    else if (i === farPrevIndex) {
+      img.classList.add("far-prev");
+    }
+
+    else if (i === farNextIndex) {
+      img.classList.add("far-next");
+    }
+
+    else {
+      img.classList.add("hidden");
+    }
+
+    // CLICK LOGIKA (bitno: pojednostavljeno)
+    img.onclick = () => {
+      index = i;
+      update();
+    };
+  });
+}
+
+update();
+let interval = setInterval(next, 4000);
+
+function next() {
+  index = (index + 1) % slides.length;
+  update();
+}
+
+const slider = document.querySelector(".slider");
+
+slider.addEventListener("mouseenter", () => {
+  clearInterval(interval);
+});
+
+slider.addEventListener("mouseleave", () => {
+  interval = setInterval(next, 1500);
+});
+
+const musicbtn = document.getElementById('musicbtn');
+const audio = document.getElementById('audio');
+const wrapper = document.querySelector(".slider-wrapper");
+
+function setUI() {
+    const isPlaying = !audio.paused;
+
+    musicbtn.textContent = isPlaying ? "⏸" : "🎧";
+    musicbtn.classList.toggle("playing", isPlaying);
+    wrapper.classList.toggle("playing", isPlaying);
+
+    
+}
+
+function toggleMusic() {
+    if (audio.paused) {
+        audio.play();
+    } else {
+        audio.pause();
+    }
+    setUI();
+}
+
+musicbtn.addEventListener('click', toggleMusic);
+
+audio.addEventListener('ended', () => {
+    audio.currentTime = 0;
+    setUI();
+});
+
+document.addEventListener("keydown", (e) => {
+    if (e.code === "Space") {
+        e.preventDefault();
+        toggleMusic();
+    }
+});
+        </script>
+    </body>
+</html>
+
+

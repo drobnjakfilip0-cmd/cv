@@ -1015,12 +1015,19 @@ body::after {
 }
 
 @media (hover: none) {
+    .icons {
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+    }
     .icons img {
         opacity: 1;
         transform: translateY(0);
+        width: 28px;
+        height: 28px;
     }
     .icons span {
-        display: none;
+        opacity: 1;
     }
 }
 

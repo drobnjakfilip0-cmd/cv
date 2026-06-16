@@ -240,10 +240,12 @@ const musicbtn = document.getElementById('musicbtn');
 const audio = document.getElementById('audio');
 const wrapper = document.querySelector('.container')
 
+const pauseSVG = `<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><rect x="5" y="3" width="4" height="18" rx="1"/><rect x="15" y="3" width="4" height="18" rx="1"/></svg>`;
+
 function setUI() {
     const isPlaying = !audio.paused;
 
-    musicbtn.textContent = isPlaying ? "⏸" : "🎧";
+    musicbtn.innerHTML = isPlaying ? pauseSVG : "🎧";
     musicbtn.classList.toggle("playing", isPlaying);
     wrapper.classList.toggle("playing", isPlaying);
     

@@ -152,7 +152,7 @@ body {
         radial-gradient(circle at top, rgba(0,255,255,0.08), transparent 40%),
         #080119;
 
-    background-image: url('/static/core/images/ja.png');
+    background-image: url('https://res.cloudinary.com/dt5z2gs3c/image/upload/v1781125315/ja-hero_tmfy4w.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -900,5 +900,56 @@ button:hover {
     .tiktok-btn {
         width: 48px;
         height: 48px;
+    }
+}
+
+@media (max-width: 375px) {
+
+    body {
+        padding: 10px;
+    }
+
+    .slider-wrapper {
+        padding: 18px 10px;
+        border-radius: 14px;
+        gap: 12px;
+    }
+
+    .slider {
+        height: 260px;
+    }
+
+    .slider img {
+        width: 140px;
+        height: 180px;
+    }
+
+    .slider img.prev {
+        transform: translate(-80%, -60%) rotate(-4deg) scale(0.75);
+    }
+
+    .slider img.next {
+        transform: translate(-10%, -60%) rotate(4deg) scale(0.75);
+    }
+
+    .slider img.far-prev,
+    .slider img.far-next {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    h1 {
+        font-size: 1.3rem;
+        letter-spacing: 1.5px;
+    }
+
+    .subtitle {
+        font-size: 0.78rem;
+        max-width: 100%;
+    }
+
+    button {
+        font-size: 0.78rem;
+        padding: 10px 16px;
     }
 }

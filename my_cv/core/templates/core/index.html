@@ -28,20 +28,21 @@
             </div>
 <div class="slider">
     <div>
-        <img src="https://res.cloudinary.com/dt5z2gs3c/image/upload/v1781611619/IMG_9496_yuuq3l.jpg">
-    </div>
-    <div>
         <img src="https://res.cloudinary.com/dt5z2gs3c/image/upload/v1781611618/IMG_9498_y4bgnk.jpg">
     </div>
     <div>
-        <img src="https://res.cloudinary.com/dt5z2gs3c/image/upload/v1781611618/IMG_9497_nqfigm.jpg">
-    </div>
-    <div>
-        <img src="https://res.cloudinary.com/dt5z2gs3c/image/upload/v1781611618/IMG_9501_eruumt.jpg">
+        <img src="https://res.cloudinary.com/dt5z2gs3c/image/upload/v1781611619/IMG_9496_yuuq3l.jpg">
     </div>
     <div>
         <img src="https://res.cloudinary.com/dt5z2gs3c/image/upload/v1781611618/IMG_9499_bgky2i.jpg">
     </div>
+    <div>
+        <img src="https://res.cloudinary.com/dt5z2gs3c/image/upload/v1781611618/IMG_9497_nqfigm.jpg">
+    </div>
+      <div>
+        <img src="https://res.cloudinary.com/dt5z2gs3c/image/upload/v1781611618/IMG_9501_eruumt.jpg">
+    </div>
+
 </div>
     <p class="swipe-hint">
         <span class="swipe-arrow">&#8592;</span> swipe <span class="swipe-arrow">&#8594;</span>
@@ -190,14 +191,14 @@ const musicbtn = document.getElementById('musicbtn');
 const audio = document.getElementById('audio');
 const wrapper = document.querySelector(".slider-wrapper");
 
+const pauseSVG = `<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><rect x="5" y="3" width="4" height="18" rx="1"/><rect x="15" y="3" width="4" height="18" rx="1"/></svg>`;
+
 function setUI() {
     const isPlaying = !audio.paused;
 
-    musicbtn.textContent = isPlaying ? "⏸" : "🎧";
+    musicbtn.innerHTML = isPlaying ? pauseSVG : "🎧";
     musicbtn.classList.toggle("playing", isPlaying);
     wrapper.classList.toggle("playing", isPlaying);
-
-    
 }
 
 function toggleMusic() {

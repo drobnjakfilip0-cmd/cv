@@ -911,33 +911,43 @@ body::after {
     }
 
     .skills {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 8px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
     }
 
     .icons {
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
-        justify-content: flex-start;
-        gap: 12px;
+        justify-content: center;
+        gap: 8px;
+        padding: 16px 12px;
+        border-radius: 16px;
+        background: rgba(120, 80, 200, 0.08);
+        border: 1px solid rgba(160, 110, 255, 0.18);
+        backdrop-filter: blur(10px);
+        transition: 0.25s ease;
+    }
+
+    .icons:active {
+        background: rgba(160, 110, 255, 0.16);
+        border-color: rgba(200, 160, 255, 0.4);
+        transform: scale(0.97);
     }
 
     .icons img {
         opacity: 1;
         transform: none;
-        width: 24px;
-        height: 24px;
+        width: 32px;
+        height: 32px;
         flex-shrink: 0;
+        filter: drop-shadow(0 0 6px rgba(160, 110, 255, 0.4));
     }
 
     .icons span {
-        font-size: 0.88rem;
-        padding: 8px 14px;
-        border-radius: 999px;
-        background: rgba(120, 80, 200, 0.10);
-        border: 1px solid rgba(160, 110, 255, 0.22);
-        flex: 1;
+        font-size: 0.78rem;
+        letter-spacing: 1px;
+        color: rgba(255, 255, 255, 0.75);
         text-align: center;
     }
 

@@ -914,6 +914,10 @@ body::after {
         font-size: 0.88rem;
     }
 
+    .projects {
+        flex-direction: column;
+    }
+
     .skills-label {
         display: block;
         font-family: 'Advent Pro', sans-serif;

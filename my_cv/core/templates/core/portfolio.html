@@ -211,24 +211,26 @@ Docker, Kubernetes & OpenShift
 
 <script>
 const skills = document.querySelectorAll("[data-skill]");
+const isTouch = window.matchMedia("(hover: none)").matches;
 
-skills.forEach(skill => {
-    const icon = skill.querySelector("img");
-    const span = skill.querySelector("span")
+if (!isTouch) {
+    skills.forEach(skill => {
+        const icon = skill.querySelector("img");
+        const span = skill.querySelector("span");
 
-    skill.addEventListener("mouseover", () => {
-        span.style.opacity = '0';
-        icon.style.opacity = "1";
-        icon.style.transform = "translateY(-60px)";
+        skill.addEventListener("mouseover", () => {
+            span.style.opacity = '0';
+            icon.style.opacity = "1";
+            icon.style.transform = "translateY(-60px)";
+        });
 
+        skill.addEventListener("mouseleave", () => {
+            span.style.opacity = '1';
+            icon.style.opacity = "0";
+            icon.style.transform = "translateY(10px)";
+        });
     });
-
-    skill.addEventListener("mouseleave", () => {
-        span.style.opacity = '1';
-        icon.style.opacity = "0";
-        icon.style.transform = "translateY(10px)";
-    });
-});
+}
 
 
 const musicbtn = document.getElementById('musicbtn');

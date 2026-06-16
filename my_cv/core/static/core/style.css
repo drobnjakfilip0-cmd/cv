@@ -776,11 +776,40 @@ button:hover {
     
 }
 
+.swipe-hint {
+    display: none;
+}
+
 /* ========================= */
 /* RESPONSIVE */
 /* ========================= */
 
 @media (max-width: 768px) {
+
+    .swipe-hint {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-family: 'Manrope', sans-serif;
+        font-size: 0.72rem;
+        letter-spacing: 2px;
+        color: rgba(255, 255, 255, 0.3);
+        text-transform: uppercase;
+    }
+
+    .swipe-arrow {
+        animation: swipePulse 1.8s ease-in-out infinite;
+        color: rgba(0, 255, 255, 0.5);
+    }
+
+    .swipe-arrow:last-child {
+        animation-delay: 0.9s;
+    }
+
+    @keyframes swipePulse {
+        0%, 100% { opacity: 0.3; transform: translateX(0); }
+        50% { opacity: 1; transform: translateX(3px); }
+    }
 
     body {
         padding: 20px;

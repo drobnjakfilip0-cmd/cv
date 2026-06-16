@@ -403,6 +403,10 @@ body::after {
     z-index: 1;
 }
 
+.project-img-mobile {
+    display: none;
+}
+
 .project-mockup {
     width: 100%;
     padding: 22px 18px 0;
@@ -918,42 +922,16 @@ body::after {
         flex-direction: column;
     }
 
-    .project-mockup,
-    .monitor-wrap,
-    .monitor-screen {
-        display: block;
-        width: 100%;
-        padding: 0;
-        margin: 0;
-        border: none;
-        border-radius: 0;
-        background: none;
-        box-shadow: none;
-        min-height: unset;
-        perspective: none;
-        transform: none !important;
-        filter: none !important;
-        transition: none;
-    }
-
-    .project-mockup::after,
-    .monitor-screen::before,
-    .monitor-screen::after {
+    .project-mockup {
         display: none;
     }
 
-    .monitor-screen img {
+    .project-img-mobile {
         display: block;
         width: 100%;
         height: 200px;
         object-fit: cover;
-        opacity: 1;
-        border-radius: 0;
-    }
-
-    .monitor-neck,
-    .monitor-base {
-        display: none;
+        border-radius: 12px;
     }
 
     .skills-label {

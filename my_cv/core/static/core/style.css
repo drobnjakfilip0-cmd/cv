@@ -152,7 +152,7 @@ body {
         radial-gradient(circle at top, rgba(0,255,255,0.08), transparent 40%),
         #080119;
 
-    background-image: url('https://res.cloudinary.com/dt5z2gs3c/image/upload/v1781125315/ja-hero_tmfy4w.jpg');
+    background-image: url('/static/core/images/ja.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -793,29 +793,29 @@ button:hover {
     }
 
     .slider img {
-        width: 220px;
-        height: 260px;
+        width: 250px;
+        height: 300px;
     }
 
     h1 {
-        font-size: 2.2rem;
+        font-size: 3.1rem;
         letter-spacing: 4px;
         text-align: center;
     }
 
     button {
-        padding: 10px 20px;
-        font-size: 0.9rem;
+        padding: 10px 18px;
+        font-size: 1.85rem;
     }
-
-    #musicbtn,
+    #musicbtn, 
     .tiktok-btn {
-        width: 54px;
-        height: 54px;
+        width: 80px;
+        height: 80px;
     }
+    
 
     .subtitle {
-        font-size: 0.9rem;
+        font-size: 1.4rem;
     }
 }
 
@@ -825,95 +825,70 @@ button:hover {
         height: auto;
         padding: 30px 18px;
         border-radius: 24px;
-        gap: 12px;
     }
 
     .slider {
-        height: 340px;
+        height: 360px;
     }
 
     .slider img {
-        width: 160px;
-        height: 200px;
+        width: 170px;
+        height: 170px;
     }
 
+    /* smanji “ludilo” razmaka da slider ne pobegne */
     .slider img.prev {
-        transform: translate(-85%, -60%) rotate(-4deg) scale(0.82);
+        transform: translate(-90%, -60%) rotate(-4deg) scale(0.8);
     }
 
     .slider img.next {
-        transform: translate(-15%, -60%) rotate(4deg) scale(0.82);
+        transform: translate(0%, -60%) rotate(4deg) scale(0.8);
     }
 
     .slider img.far-prev {
         transform: translate(-140%, -55%) scale(0.6) rotate(-10deg);
-        opacity: 0.3;
     }
 
     .slider img.far-next {
         transform: translate(40%, -55%) scale(0.6) rotate(10deg);
-        opacity: 0.3;
-    }
-
-    h1 {
-        font-size: 1.8rem;
-        letter-spacing: 3px;
     }
 
     .subtitle {
-        font-size: 0.82rem;
-        max-width: 300px;
+        font-size: 0.85rem;
+        max-width: 320px;
     }
 }
 
 @media (max-width: 480px) {
 
     body {
-        padding: 14px;
+        padding: 15px;
     }
 
     .slider-wrapper {
         height: auto;
-        padding: 24px 14px 28px;
-        border-radius: 20px;
-        gap: 14px;
-        overflow: hidden;
+        padding: 25px 14px;
+        border-radius: 18px;
     }
 
     .slider {
-        height: 240px;
+        height: 300px;
     }
 
-    /* On mobile show only the active image — no fan effect */
     .slider img {
-        width: 160px;
-        height: 200px;
-        border-radius: 14px;
-    }
-
-    .slider img.prev,
-    .slider img.next,
-    .slider img.far-prev,
-    .slider img.far-next {
-        opacity: 0;
-        pointer-events: none;
-        transform: translate(-50%, -50%) scale(0.5);
-    }
-
-    .slider img.active {
-        transform: translate(-50%, -55%) scale(1.05);
+        width: 180px;
+        height: 240px;
+        border-radius: 16px;
     }
 
     h1 {
-        font-size: 1.5rem;
-        letter-spacing: 3px;
+        font-size: 1.6rem;
+        letter-spacing: 2px;
     }
 
     button {
         width: 100%;
-        max-width: 240px;
-        font-size: 0.85rem;
-        padding: 12px 20px;
+        max-width: 260px;
     }
 
     .btns {
@@ -925,55 +900,5 @@ button:hover {
     .tiktok-btn {
         width: 48px;
         height: 48px;
-        border-radius: 14px;
-    }
-
-    .subtitle {
-        font-size: 0.78rem;
-        max-width: 100%;
-        letter-spacing: 0.8px;
-    }
-}
-
-@media (max-width: 375px) {
-
-    body {
-        padding: 10px;
-    }
-
-    .slider-wrapper {
-        padding: 20px 12px 24px;
-        border-radius: 16px;
-        gap: 12px;
-    }
-
-    .slider {
-        height: 210px;
-    }
-
-    .slider img {
-        width: 140px;
-        height: 176px;
-    }
-
-    h1 {
-        font-size: 1.25rem;
-        letter-spacing: 2px;
-    }
-
-    .subtitle {
-        font-size: 0.73rem;
-    }
-
-    button {
-        font-size: 0.78rem;
-        padding: 10px 16px;
-        max-width: 200px;
-    }
-
-    #musicbtn,
-    .tiktok-btn {
-        width: 44px;
-        height: 44px;
     }
 }

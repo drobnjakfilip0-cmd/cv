@@ -364,74 +364,209 @@ body::after {
 /* PROJECTS */
 .projects {
     display: flex;
- 
-
-    gap: 18px;
+    gap: 14px;
 }
 
 .project {
+    flex: 1;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-     font-family: "Carilliantine", sans-serif;
-   
-    gap: 20px;
+    flex-direction: column;
+    gap: 0;
 
-    padding: 16px 18px;
-
-    border-radius: 18px;
+    border-radius: 20px;
 
     background: rgba(140, 90, 255, 0.05);
-
     border: 1px solid rgba(160, 110, 255, 0.12);
-
     backdrop-filter: blur(10px);
 
-    transition: 0.3s ease;
+    overflow: hidden;
+    transition: 0.32s ease;
+    position: relative;
 }
 
 .project:hover {
-    transform: translateY(-4px);
-
+    transform: translateY(-6px);
     border-color: rgba(200, 160, 255, 0.35);
-
     background: rgba(160, 110, 255, 0.10);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.45);
+}
 
+.project-num {
+    position: absolute;
+    top: 12px;
+    left: 14px;
+    font-family: "Inter", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: rgba(200, 160, 255, 0.5);
+    z-index: 1;
+}
+
+.project-mockup {
+    width: 100%;
+    padding: 22px 18px 0;
+    perspective: 900px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background: radial-gradient(ellipse at 50% 80%, rgba(100, 60, 200, 0.12) 0%, transparent 70%);
+    border-radius: 16px 16px 0 0;
+    min-height: 160px;
+}
+
+.project-mockup::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 65%;
+    height: 40px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse at center, rgba(160, 110, 255, 0.45) 0%, transparent 75%);
+    filter: blur(8px);
+    transition: 0.4s ease;
+    z-index: 0;
+}
+
+.project:hover .project-mockup::after {
+    width: 80%;
+    background: radial-gradient(ellipse at center, rgba(180, 130, 255, 0.65) 0%, transparent 72%);
+}
+
+.monitor-wrap {
+    position: relative;
+    z-index: 1;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: rotateX(10deg) rotateY(-5deg) translateY(0px);
+    transform-origin: bottom center;
+    transform-style: preserve-3d;
+    transition: transform 0.45s cubic-bezier(.22,.68,0,1.2), filter 0.4s ease;
+    filter: drop-shadow(0 18px 32px rgba(80, 40, 160, 0.55)) drop-shadow(0 4px 10px rgba(0,0,0,0.6));
+}
+
+.project:hover .monitor-wrap {
+    transform: rotateX(0deg) rotateY(0deg) translateY(-10px);
+    filter: drop-shadow(0 28px 50px rgba(140, 90, 255, 0.7)) drop-shadow(0 6px 14px rgba(0,0,0,0.5));
+}
+
+.monitor-screen {
+    width: 100%;
+    border: 10px solid #1c1c2e;
+    border-bottom-width: 22px;
+    border-radius: 10px 10px 6px 6px;
+    background: #0a0a18;
+    position: relative;
+    overflow: hidden;
     box-shadow:
-        0 20px 50px rgba(0,0,0,0.4);
+        0 0 0 1.5px rgba(255,255,255,0.06),
+        inset 0 0 0 1.5px rgba(255,255,255,0.04),
+        inset 0 -4px 12px rgba(0,0,0,0.6);
 }
 
-.project a {
-    color: rgba(255,255,255,0.9);
-
-    text-decoration: none;
-    
-
-    font-size: 1.5rem;
-
-    transition: 0.3s ease;
+.project:hover .monitor-screen {
+    box-shadow:
+        0 0 0 1.5px rgba(200,160,255,0.25),
+        inset 0 0 0 1.5px rgba(200,160,255,0.08),
+        inset 0 -4px 12px rgba(0,0,0,0.6),
+        0 0 22px rgba(140, 90, 255, 0.25);
 }
 
-.project a:hover {
-    color: rgba(200, 160, 255, 1);
+.monitor-screen::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #2a2a40;
+    box-shadow: 0 0 0 1.5px rgba(255,255,255,0.06);
+    z-index: 2;
 }
 
-/* MOCKUP */
-.project-mockup img {
-    width: 120px;
-
-    opacity: 0.85;
-
-    filter:
-        drop-shadow(0 15px 30px rgba(0,0,0,0.5));
-
-    transition: 0.3s ease;
+.monitor-screen::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+        to bottom,
+        transparent,
+        transparent 3px,
+        rgba(0,0,0,0.06) 3px,
+        rgba(0,0,0,0.06) 4px
+    );
+    border-radius: 2px;
 }
 
-.project:hover .project-mockup img {
-    transform: translateY(-6px) scale(1.03);
+.monitor-screen img {
+    display: block;
+    width: 100%;
+    height: auto;
+    opacity: 0.92;
+    transition: opacity 0.3s ease;
+}
 
+.project:hover .monitor-screen img {
     opacity: 1;
+}
+
+.monitor-neck {
+    width: 12%;
+    height: 16px;
+    background: linear-gradient(to bottom, #1c1c2e, #14142a);
+    border-left: 1px solid rgba(255,255,255,0.04);
+    border-right: 1px solid rgba(255,255,255,0.04);
+}
+
+.monitor-base {
+    width: 42%;
+    height: 8px;
+    background: linear-gradient(to bottom, #1e1e32, #141428);
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.04);
+}
+
+.project-info {
+    padding: 14px 16px 16px;
+    border-top: 1px solid rgba(160, 110, 255, 0.10);
+}
+
+.project-info a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: rgba(255,255,255,0.88);
+    text-decoration: none;
+    font-family: "Inter", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: 0.28s ease;
+}
+
+.project-info a .arrow {
+    width: 18px;
+    height: 18px;
+    color: rgba(200, 160, 255, 0.5);
+    flex-shrink: 0;
+    transition: 0.28s ease;
+}
+
+.project:hover .project-info a {
+    color: rgba(220, 185, 255, 1);
+}
+
+.project:hover .project-info a .arrow {
+    color: rgba(200, 160, 255, 1);
+    transform: translateX(4px);
 }
 
 /* SKILLS */

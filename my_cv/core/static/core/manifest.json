@@ -1,0 +1,17 @@
+{
+  "name": "Filip Drobnjak",
+  "short_name": "FD",
+  "description": "Filip Drobnjak – Frontend & Backend Developer",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#05020f",
+  "theme_color": "#7c3aed",
+  "icons": [
+    {
+      "src": "/static/core/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

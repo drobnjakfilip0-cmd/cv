@@ -6,8 +6,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Portfolio</title>
+    <title>Filip Drobnjak – Portfolio</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100;200;300&family=Manrope:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'core/portfolio.css' %}">
 </head>
 
@@ -50,45 +53,60 @@
             <div class="projects">
 
                 <div class="project">
-
+                    <span class="project-num">01</span>
+                    <div class="project-mockup">
+                        <div class="monitor-wrap">
+                            <div class="monitor-screen">
+                                <img src="https://res.cloudinary.com/dt5z2gs3c/image/upload/v1781073315/Screenshot_2026-06-10_at_08.29.40_lh8fer.png" alt="Laptop Mockup">
+                            </div>
+                            <div class="monitor-neck"></div>
+                            <div class="monitor-base"></div>
+                        </div>
+                    </div>
                     <div class="project-info">
-                        <a href="https://tvoj-sajt1.com" target="_blank">
+                        <a href="https://www.starikolasin.rs" target="_blank">
                             Project one
+                            <svg class="arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         </a>
                     </div>
-
-                    <div class="project-mockup">
-                        <img src="/static/core/images/laptop.png" alt="Laptop Mockup">
-                    </div>
-
                 </div>
 
                 <div class="project">
-
+                    <span class="project-num">02</span>
+                    <div class="project-mockup">
+                        <div class="monitor-wrap">
+                            <div class="monitor-screen">
+                                <img src="https://res.cloudinary.com/dt5z2gs3c/image/upload/v1781073418/Screenshot_2026-06-10_at_08.36.39_xpyhhd.png" alt="Desktop Mockup">
+                            </div>
+                            <div class="monitor-neck"></div>
+                            <div class="monitor-base"></div>
+                        </div>
+                    </div>
                     <div class="project-info">
-                        <a href="https://tvoj-sajt1.com" target="_blank">
+                        <a href="http://187.124.23.18:8002/" target="_blank">
                             Project two
+                            <svg class="arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         </a>
                     </div>
-
-                    <div class="project-mockup">
-                        <img src="/static/core/images/desktop.png" alt="Desktop Mockup">
-                    </div>
-
                 </div>
 
                 <div class="project">
-
+                    <span class="project-num">03</span>
+                    <div class="project-mockup">
+                        <div class="monitor-wrap">
+                            <div class="monitor-screen">
+                                <img src="https://res.cloudinary.com/dt5z2gs3c/image/upload/v1781074499/Screenshot_2026-06-10_at_08.54.29_n9nbme.png" alt="Desktop Mockup">
+                            </div>
+                            <div class="monitor-neck"></div>
+                            <div class="monitor-base"></div>
+                        </div>
+                    </div>
                     <div class="project-info">
-                        <a href="https://tvoj-sajt1.com" target="_blank">
+                        <a href="http://187.124.23.18:8003/" target="_blank">
                             Project three
+                            <svg class="arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         </a>
                     </div>
-
-                    <div class="project-mockup">
-                        <img src="/static/core/images/desktop.png" alt="Desktop Mockup">
-                    </div>
-
                 </div>
 
             </div>
@@ -109,7 +127,7 @@
                 </svg>
             </a>
             <a id="musicbtn">🎧</a>
-            <audio id="audio" src="/static/core/audio/shots.mp3"></audio>
+            <audio id="audio" src="{% static 'core/audio/shots.mp3' %}"></audio>
             </div>
             <div class="cert-box">
                 
@@ -158,32 +176,32 @@ Docker, Kubernetes & OpenShift
         <div class="skills">
     <div class="icons" data-skill>
     <span>Python</span>
-    <img src="/static/core/icons/python.svg">
+    <img src="{% static 'core/icons/python.svg' %}">
 </div>
 
 <div class="icons" data-skill>
     <span>Django</span>
-    <img src="/static/core/icons/django.svg">
+    <img src="{% static 'core/icons/django.svg' %}">
 </div>
 
 <div class="icons" data-skill>
     <span>HTML</span>
-    <img src="/static/core/icons/html.svg">
+    <img src="{% static 'core/icons/html.svg' %}">
 </div>
 
 <div class="icons" data-skill>
     <span>CSS</span>
-    <img src="/static/core/icons/css.svg">
+    <img src="{% static 'core/icons/css.svg' %}">
 </div>
 
 <div class="icons" data-skill>
     <span>JavaScript</span>
-    <img src="/static/core/icons/js-smallest.svg">
+    <img src="{% static 'core/icons/js-smallest.svg' %}">
 </div>
 
 <div class="icons" data-skill>
     <span>Photoshop</span>
-    <img src="/static/core/icons/ps-small.svg">
+    <img src="{% static 'core/icons/ps-small.svg' %}">
 </div>
         
 

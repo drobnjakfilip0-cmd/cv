@@ -8,9 +8,9 @@
   "theme_color": "#7c3aed",
   "icons": [
     {
-      "src": "/static/core/favicon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
+      "src": "https://res.cloudinary.com/dt5z2gs3c/image/upload/v1781614658/duborg_trobe_icon_for_mobile_app_for_my_portfolio_letters_in__b04ed9f0-e988-4b91-9d90-b2bc15d2464e_3_xtesfu.png",
+      "sizes": "512x512",
+      "type": "image/png",
       "purpose": "any maskable"
     }
   ]

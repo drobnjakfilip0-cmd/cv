@@ -922,35 +922,42 @@ body::after {
         padding: 0;
         border-radius: 0;
         min-height: unset;
+        background: none;
+    }
+
+    .project-mockup::after {
+        display: none;
     }
 
     .monitor-wrap {
         width: 100%;
-        transform: none;
-        filter: none;
-    }
-
-    .project:hover .monitor-wrap {
-        transform: none;
-        filter: none;
+        transform: none !important;
+        filter: none !important;
+        transition: none;
     }
 
     .monitor-screen {
         border-radius: 0;
         border: none;
         border-bottom: 1px solid rgba(160, 110, 255, 0.15);
+        box-shadow: none;
+    }
+
+    .monitor-screen::before,
+    .monitor-screen::after {
+        display: none;
     }
 
     .monitor-screen img {
         width: 100%;
-        height: 180px;
+        height: 200px;
         object-fit: cover;
         opacity: 1;
+        display: block;
     }
 
     .monitor-neck,
-    .monitor-base,
-    .project-mockup::after {
+    .monitor-base {
         display: none;
     }
 

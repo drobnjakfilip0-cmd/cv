@@ -18,7 +18,7 @@ body {
     padding: 30px;
 
     background:
-        url("/static/core/images/ja.png")
+        url("https://res.cloudinary.com/dt5z2gs3c/image/upload/v1781125315/ja-hero_tmfy4w.jpg")
         center center / cover
         no-repeat fixed;
 

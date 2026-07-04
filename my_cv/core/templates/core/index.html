@@ -39,20 +39,29 @@
             <audio id="audio" src="/static/core/audio/shots.mp3"></audio>
             </div>
 <div class="slider">
-    <div>
-        <img src="https://res.cloudinary.com/dt5z2gs3c/image/upload/v1781611618/IMG_9498_y4bgnk.jpg">
+    <div class="tech-slide">
+        <img src="{% static 'core/icons/python.svg' %}" alt="Python">
+        <span>Python</span>
     </div>
-    <div>
-        <img src="https://res.cloudinary.com/dt5z2gs3c/image/upload/v1781611619/IMG_9496_yuuq3l.jpg">
+    <div class="tech-slide">
+        <img src="{% static 'core/icons/django.svg' %}" alt="Django">
+        <span>Django</span>
     </div>
-    <div>
-        <img src="https://res.cloudinary.com/dt5z2gs3c/image/upload/v1781611618/IMG_9499_bgky2i.jpg">
+    <div class="tech-slide">
+        <img src="{% static 'core/icons/html.svg' %}" alt="HTML">
+        <span>HTML</span>
     </div>
-    <div>
-        <img src="https://res.cloudinary.com/dt5z2gs3c/image/upload/v1781611618/IMG_9497_nqfigm.jpg">
+    <div class="tech-slide">
+        <img src="{% static 'core/icons/css.svg' %}" alt="CSS">
+        <span>CSS</span>
     </div>
-      <div>
-        <img src="https://res.cloudinary.com/dt5z2gs3c/image/upload/v1781611618/IMG_9501_eruumt.jpg">
+    <div class="tech-slide">
+        <img src="{% static 'core/icons/js-smallest.svg' %}" alt="JavaScript">
+        <span>JavaScript</span>
+    </div>
+    <div class="tech-slide">
+        <img src="{% static 'core/icons/react.webp' %}" alt="React">
+        <span>React</span>
     </div>
 
 </div>
@@ -65,7 +74,7 @@
 
 </div>
          <script>
-  const slides = document.querySelectorAll(".slider img");
+  const slides = document.querySelectorAll(".slider .tech-slide");
 let index = 0;
 
 function update() {

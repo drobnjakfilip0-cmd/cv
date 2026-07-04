@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "django-portfolio",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["-c", "cd /Users/draganavlaskovic/Desktop/cv/my_cv && python manage.py runserver 8080"],
+      "port": 8080
+    }
+  ]
+}
